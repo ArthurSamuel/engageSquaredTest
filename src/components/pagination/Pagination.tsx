@@ -11,18 +11,18 @@ export default function Pagination({
   numberOfCollection,
   onChange,
   perPage,
-}: IPagination) {
+}: IPagination): JSX.Element {
   const [active, setActive] = React.useState(0);
   const callbackNumberOfUnit = React.useCallback(() => {
     return Math.round(numberOfCollection / perPage);
   }, [numberOfCollection]);
 
-  const handleOnClick = (page: number) => {
+  const handleOnClick = (page: number): void => {
     setActive(page);
     onChange(page + 1);
   };
 
-  const renderPagination = () => {
+  const renderPagination = (): JSX.Element[] => {
     const items = [];
 
     for (let i = 0; i < callbackNumberOfUnit(); i++) {

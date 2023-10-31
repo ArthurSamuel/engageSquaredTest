@@ -11,13 +11,13 @@ export default function EngageSquaredTest() {
 
   return (
     <div className={styles.container}>
-      <div className={styles.leftContent}>
+      <div style={{ marginBottom: 20 }}>
         <Filter
           onChangeType={(e) => setType(e)}
           onSearch={(e) => setSearch(e)}
         />
       </div>
-      <div className={styles.rightContent}>
+      <div>
         {type.key === "road" ? (
           <Road search={search} />
         ) : (

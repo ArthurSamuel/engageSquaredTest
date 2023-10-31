@@ -42,11 +42,7 @@ export default function Card({
   };
 
   return (
-    <DocumentCard
-      type={DocumentCardType.compact}
-      style={{ marginBottom: 20 }}
-      onClick={handleOnClick}
-    >
+    <DocumentCard type={DocumentCardType.compact} onClick={handleOnClick}>
       <div className={styles.container}>
         <div className={styles.leftContent}>
           <Map id={id} lat={lat} lng={lng} />

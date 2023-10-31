@@ -3,7 +3,7 @@
   "solution": {
     "name": "engage-squared-test-client-side-solution",
     "id": "2e246acf-1361-47e4-9415-48039f0118e0",
-    "version": "1.0.0.0",
+    "version": "1.1.0.1",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
@@ -30,7 +30,7 @@
         "title": "engage-squared-test Feature",
         "description": "The feature that activates elements of the engage-squared-test solution.",
         "id": "f63d47bf-d668-4159-b943-cd9e9b60c8b1",
-        "version": "1.0.0.0"
+        "version": "1.1.0.1"
       }
     ]
   },

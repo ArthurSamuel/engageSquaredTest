@@ -23,6 +23,7 @@ export default function Corridors({ search }: ICorridorsProps) {
     key: "displayName",
   });
   const { data: dataCorridors } = useGetDataByPage<ICorridors>({
+    perPage: PER_PAGE,
     collections: dataCorridorsFiltered,
     page,
   });
@@ -44,20 +45,28 @@ export default function Corridors({ search }: ICorridorsProps) {
 
   return (
     <div>
-      {dataCorridors?.map((item, index) => {
-        const latLng = toLatLng(item.bounds);
-        return (
-          <Card
-            key={index}
-            id={item.id}
-            lat={latLng.lat}
-            lng={latLng.lng}
-            displayName={item.displayName}
-            statusSeverity={item.statusSeverity}
-            statusSeverityDescription={item.statusSeverityDescription}
-          />
-        );
-      })}
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(3, 1fr)",
+          gap: 10,
+        }}
+      >
+        {dataCorridors?.map((item, index) => {
+          const latLng = toLatLng(item.bounds);
+          return (
+            <Card
+              key={index}
+              id={item.id}
+              lat={latLng.lat}
+              lng={latLng.lng}
+              displayName={item.displayName}
+              statusSeverity={item.statusSeverity}
+              statusSeverityDescription={item.statusSeverityDescription}
+            />
+          );
+        })}
+      </div>
       <Pagination
         perPage={PER_PAGE}
         numberOfCollection={dataCorridorsFiltered?.length || 0}

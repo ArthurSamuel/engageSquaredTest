@@ -11,7 +11,7 @@ interface IRoadProps {
   search: string;
 }
 
-const PER_PAGE = 10;
+const PER_PAGE = 9;
 
 export default function Road({ search }: IRoadProps) {
   const [page, setPage] = React.useState(1);
@@ -23,6 +23,7 @@ export default function Road({ search }: IRoadProps) {
     key: "location",
   });
   const { data: dataRoad } = useGetDataByPage<IRoad>({
+    perPage: PER_PAGE,
     collections: dataRoadFiltered,
     page,
   });
@@ -37,19 +38,28 @@ export default function Road({ search }: IRoadProps) {
 
   return (
     <div>
-      {dataRoad?.map((item, index) => {
-        return (
-          <Card
-            key={index}
-            id={item.id}
-            lat={item.geography.coordinates[1]}
-            lng={item.geography.coordinates[0]}
-            displayName={item.location}
-            statusSeverity={item.severity}
-            statusSeverityDescription={item.currentUpdate}
-          />
-        );
-      })}
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(3, 1fr)",
+          gap: 10,
+        }}
+      >
+        {dataRoad?.map((item, index) => {
+          return (
+            <Card
+              key={index}
+              id={item.id}
+              lat={item.geography.coordinates[1]}
+              lng={item.geography.coordinates[0]}
+              displayName={item.location}
+              statusSeverity={item.severity}
+              statusSeverityDescription={item.currentUpdate}
+            />
+          );
+        })}
+      </div>
+
       <Pagination
         perPage={PER_PAGE}
         numberOfCollection={dataRoadFiltered.length || 0}
