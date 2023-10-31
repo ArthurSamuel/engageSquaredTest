@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "engage-squared-test-client-side-solution",
+    "id": "2e246acf-1361-47e4-9415-48039f0118e0",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.18.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "engageSquaredTest description"
+      },
+      "longDescription": {
+        "default": "engageSquaredTest description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "engage-squared-test Feature",
+        "description": "The feature that activates elements of the engage-squared-test solution.",
+        "id": "f63d47bf-d668-4159-b943-cd9e9b60c8b1",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/engage-squared-test.sppkg"
+  }
+}
